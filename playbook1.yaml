@@ -30,7 +30,7 @@
     shell: mvn package chdir="{{ workspace }}"
     run_once: true
 
-  - name: Copy war to remote server
+  - name: Copy war from remote server
     fetch:
-     src: /usr/boxfuse/target/
+     src: /usr/boxfuse/target/hello-1.0.war
      dest: /tmp

@@ -32,5 +32,5 @@
 
   - name: Copy war to remote server
     fetch:
-     src: /usr/boxfuse/target/*.war
+     src: /usr/boxfuse/target/
      dest: /tmp

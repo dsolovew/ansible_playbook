@@ -34,3 +34,14 @@
     fetch:
      src: /usr/boxfuse/target/hello-1.0.war
      dest: /tmp
+
+
+- name : run tomcat and application
+  hosts: db
+  become : yes
+
+  tasks: 
+  - name: Ensure tomcat is present
+    apt: 
+     name: tomcat9
+     state: present

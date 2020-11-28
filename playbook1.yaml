@@ -32,7 +32,7 @@
 
   - name: Copy war from remote server
     fetch:
-     src: /usr/boxfuse/target/
+     src: /usr/boxfuse/target
      dest: /tmp
      with_fileglob:
       - /usr/boxfuse/target/*.war

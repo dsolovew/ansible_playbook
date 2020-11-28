@@ -49,4 +49,4 @@
   - name: copy war from local to db server
     copy:
      src: /tmp/34.105.177.150/usr/boxfuse/target/hello-1.0.war
-     dst: /var/lib/tomcat9/webapps
+     dest: /var/lib/tomcat9/webapps

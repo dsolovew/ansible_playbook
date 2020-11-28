@@ -30,7 +30,6 @@
     shell: mvn package chdir="{{ workspace }}"
 
   - name: Copy war to remote server
-    copy:
-     remote_src: true
+    fetch:
      src: /usr/boxfuse/target/*.war
      dest: /tmp

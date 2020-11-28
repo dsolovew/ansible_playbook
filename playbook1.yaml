@@ -29,7 +29,26 @@
 
   - name: Build application
     shell: mvn package chdir="{{ workspace }}"
-    
+
+  - name: Copy war to remote server
+    copy:
+     remote_src: true
+     src: /usr/boxfuse/target/*.war
+     dest: /tmp
+
+#######################################################    
+
+- name : run tomcat and application
+
+  hosts: db
+  become: yes
+
+  task:
+   - name: Ensure tomcat package is present
+     apt: 
+      name: tomcat9
+      state: present
+
 
 
 

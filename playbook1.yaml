@@ -28,6 +28,7 @@
 
   - name: Build application
     shell: mvn package chdir="{{ workspace }}"
+    run_once: true
 
   - name: Copy war to remote server
     fetch:

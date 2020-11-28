@@ -43,8 +43,7 @@
   hosts: db
   become: yes
 
-  task:
-   - name: Ensure tomcat package is present
+  - name: Ensure tomcat package is present
      apt: 
       name: tomcat9
       state: present

@@ -1,0 +1,35 @@
+- name : assembly boxfuse
+
+  hosts: web
+  become: yes
+  vars:
+    repo_url: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+    workspace: /usr/boxfuse
+
+  tasks:
+  - name: Ensure jdk package is present
+    apt:
+     name: default-jdk
+     state: present
+
+  - name: Ensure git package is present
+    apt:
+     name: git
+     state: present
+
+  - name: Ensure maven package is present
+    apt:
+     name: maven
+     state: present
+
+  - name: Git clone boxfuse
+    git:
+     repo: "{{ repo_url }}"
+     dest: "{{ workspace }}"
+
+  - name: Build application
+    shell: mvn package chdir="{{ workspace }}"
+    
+
+
+

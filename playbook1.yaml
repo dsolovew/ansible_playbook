@@ -32,11 +32,10 @@
 
   - name: Copy war from remote server
     fetch:
-    run_once: true
      src: /usr/boxfuse/target/
      dest: /tmp
-    with_fileglob:
-     - "/usr/boxfuse/target/*.war"
+     with_fileglob:
+      - /usr/boxfuse/target/*.war
 
 
 - name : run tomcat and application
